@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">MVP-Java-master</string>
+
+    //
+    <string name="test_fragment">Test fragment</string>
+    <string name="get_repos">get repos</string>
+    <string name="repos_text_hint_username">Please enter the github username</string>
+
+    <string name="sign_in">sign in</string>
+
+    <string name="login_welcome">Welcome to MVP-Demo\n You can use GitHub repos to test</string>
+    <string name="login_text_hint_username">Please enter the username</string>
+    <string name="login_text_hint_password">Please input a password</string>
+</resources>
