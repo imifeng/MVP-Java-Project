@@ -1,0 +1,52 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+
+    ext.rxandroid_version = '3.0.0'
+    ext.rxjava_version = '3.0.3'
+    ext.retrofit_version = '2.8.1'
+    ext.rxjava3_retrofit_adapter = '3.0.0'
+
+    ext.autodispose_version = '2.0.0'
+
+    ext.butterknife_version = '10.2.1'
+
+    ext.statusbarutil_version ='1.5.1'
+    ext.glide_version ='4.11.0'
+    ext.transformations_version ='4.0.0'
+    ext.permissions_version ='4.7.0'
+
+    repositories {
+        google()
+        jcenter()
+        
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.5.2'
+        
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+
+        maven { url "https://oss.jfrog.org/libs-snapshot" }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+// Define versions in a single place
+ext {
+    // Sdk and tools
+    minSdkVersion = 19
+    targetSdkVersion = 29
+    compileSdkVersion = 29
+    buildToolsVersion = '29.0.0'
+}
