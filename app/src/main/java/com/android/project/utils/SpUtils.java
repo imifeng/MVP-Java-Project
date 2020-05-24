@@ -4,6 +4,7 @@ package com.android.project.utils;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import com.android.project.BuildConfig;
 import com.android.project.MApplication;
 
 /**
@@ -13,7 +14,8 @@ import com.android.project.MApplication;
  */
 public class SpUtils {
 
-    private static final String SP_NAME_COMMON = "sp_name_common";
+    public static final String SP_PREFIX = BuildConfig.APPLICATION_ID + ".SHARED_PREF";
+    public static final String SHARED_PREF = SP_PREFIX +"_" + BuildConfig.BUILD_TYPE;
 
     private static SpUtils spUtils;
     private static SharedPreferences sp;
@@ -29,7 +31,7 @@ public class SpUtils {
     }
 
     public SpUtils() {
-        sp = MApplication.getInstance().getSharedPreferences(SP_NAME_COMMON, Context.MODE_PRIVATE);
+        sp = MApplication.getInstance().getSharedPreferences(SHARED_PREF, Context.MODE_PRIVATE);
     }
 
     /**

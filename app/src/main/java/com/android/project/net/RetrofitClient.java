@@ -5,6 +5,7 @@ import android.text.TextUtils;
 import com.android.project.BuildConfig;
 import com.android.project.mvp.model.bean.User;
 import com.android.project.net.gson.GsonSerializer;
+import com.android.project.utils.GsonUtils;
 import com.android.project.utils.LogUtils;
 
 import java.util.concurrent.TimeUnit;
@@ -50,7 +51,7 @@ public class RetrofitClient {
         retrofit = new Retrofit.Builder()
                 .client(okHttpClient)
                 .baseUrl(Api.getBaseHost())
-                .addConverterFactory(GsonConverterFactory.create(GsonSerializer.get().getGson()))
+                .addConverterFactory(GsonConverterFactory.create(GsonUtils.mGson))
                 .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
                 .build();
     }

@@ -11,7 +11,7 @@ import com.android.project.common.Comparams;
 import com.android.project.mvp.contract.TestContract;
 import com.android.project.mvp.model.bean.RepoBean;
 import com.android.project.mvp.presenter.TestPresenter;
-import com.android.project.net.gson.GsonSerializer;
+import com.android.project.utils.GsonUtils;
 import com.android.project.utils.ToastUtils;
 
 import java.util.List;
@@ -71,7 +71,7 @@ public class TestReposFragment extends BaseMvpFragment<TestContract.View, TestPr
 
     @Override
     public void onReposSuccess(List<RepoBean> response) {
-        ToastUtils.showToast("getRepos Successful:"  + ":" + GsonSerializer.get().toJson(response));
+        ToastUtils.showToast("getRepos Successful:"  + ":" + GsonUtils.get().toJson(response));
 
     }
 }

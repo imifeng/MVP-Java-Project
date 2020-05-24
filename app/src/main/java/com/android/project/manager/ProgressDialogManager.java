@@ -1,4 +1,4 @@
-package com.android.project.widget;
+package com.android.project.manager;
 
 import android.app.Activity;
 import android.app.ProgressDialog;

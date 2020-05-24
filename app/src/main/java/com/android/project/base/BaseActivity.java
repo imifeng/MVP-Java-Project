@@ -8,7 +8,7 @@ import android.view.View;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.android.project.utils.ClickShadowUtils;
+import com.android.project.utils.OnClickUtils;
 import com.jaeger.library.StatusBarUtil;
 
 import butterknife.ButterKnife;
@@ -52,7 +52,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 
 
     protected void setOnClickListener(View view, View.OnClickListener onClickListener) {
-        ClickShadowUtils.setOnClickListener(view, onClickListener);
+        OnClickUtils.setOnClickListener(view, onClickListener);
     }
 
     protected abstract void onBack();

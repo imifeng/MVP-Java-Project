@@ -4,7 +4,7 @@ import android.os.Bundle;
 
 import com.android.project.net.RxLifecycleUtils;
 import com.android.project.utils.ToastUtils;
-import com.android.project.widget.ProgressDialogManager;
+import com.android.project.manager.ProgressDialogManager;
 
 import autodispose2.AutoDisposeConverter;
 

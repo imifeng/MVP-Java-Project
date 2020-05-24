@@ -1,6 +1,9 @@
 package com.android.project;
 
+import android.app.Activity;
 import android.app.Application;
+import android.content.Context;
+import android.os.Build;
 
 /**
  * @author Finn
@@ -19,5 +22,25 @@ public class MApplication extends Application {
         super.onCreate();
         //init
         instance = this;
+    }
+
+
+    public Boolean isContextExisted(Context context) {
+        if (context != null) {
+            if (context instanceof Activity) {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1) {
+                    if (!((Activity) context).isDestroyed() && !((Activity) context).isFinishing()) {
+                        return true;
+                    }
+                } else {
+                    if (!((Activity) context).isFinishing()) {
+                        return true;
+                    }
+                }
+            } else if (context instanceof Application) {
+                return true;
+            }
+        }
+        return false;
     }
 }

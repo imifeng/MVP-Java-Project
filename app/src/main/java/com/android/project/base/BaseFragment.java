@@ -11,7 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.android.project.utils.ClickShadowUtils;
+import com.android.project.utils.OnClickUtils;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
@@ -79,7 +79,7 @@ public abstract class BaseFragment extends Fragment {
     }
 
     protected void setOnClickListener(View view, View.OnClickListener onClickListener) {
-        ClickShadowUtils.setOnClickListener(view, onClickListener);
+        OnClickUtils.setOnClickListener(view, onClickListener);
     }
 
     @Override

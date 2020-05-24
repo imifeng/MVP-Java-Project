@@ -10,7 +10,7 @@ import java.util.concurrent.atomic.AtomicReference;
  * @date 2020
  * 点击事件响应效果设置
  */
-public class ClickShadowUtils {
+public class OnClickUtils {
 
     public static void setOnClickListener(View view, View.OnClickListener onClickListener) {
         AtomicReference<Float> startX = new AtomicReference<>(0f);
