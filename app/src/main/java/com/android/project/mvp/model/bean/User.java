@@ -1,7 +1,7 @@
 package com.android.project.mvp.model.bean;
 
 import com.android.project.manager.SharedPreferencesManager;
-import com.android.project.net.gson.GsonSerializer;
+import com.android.project.utils.GsonUtils;
 
 public class User {
     private int id;
@@ -14,7 +14,7 @@ public class User {
 
     public static void save(User user) {
         if (user != null) {
-            SharedPreferencesManager.saveUser(GsonSerializer.get().toJson(user));
+            SharedPreferencesManager.saveUser(GsonUtils.get().toJson(user));
         } else {
             SharedPreferencesManager.clearUser();
         }

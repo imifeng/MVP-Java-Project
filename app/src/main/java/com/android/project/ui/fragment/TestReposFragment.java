@@ -7,11 +7,11 @@ import android.widget.TextView;
 
 import com.android.project.R;
 import com.android.project.base.BaseMvpFragment;
-import com.android.project.common.Comparams;
+import com.android.project.common.Constant;
 import com.android.project.mvp.contract.TestContract;
 import com.android.project.mvp.model.bean.RepoBean;
 import com.android.project.mvp.presenter.TestPresenter;
-import com.android.project.net.gson.GsonSerializer;
+import com.android.project.utils.GsonUtils;
 import com.android.project.utils.ToastUtils;
 
 import java.util.List;
@@ -40,7 +40,7 @@ public class TestReposFragment extends BaseMvpFragment<TestContract.View, TestPr
         super.initView(view);
         Bundle bundle = getArguments();
         if (bundle != null) {
-            String testStr = bundle.getString(Comparams.EXTRA_ACTION_TEST);
+            String testStr = bundle.getString(Constant.EXTRA_ACTION_TEST);
             ToastUtils.showToast(testStr);
         }
     }
@@ -71,7 +71,7 @@ public class TestReposFragment extends BaseMvpFragment<TestContract.View, TestPr
 
     @Override
     public void onReposSuccess(List<RepoBean> response) {
-        ToastUtils.showToast("getRepos Successful:"  + ":" + GsonSerializer.get().toJson(response));
+        ToastUtils.showToast("getRepos Successful:"  + ":" + GsonUtils.get().toJson(response));
 
     }
 }
