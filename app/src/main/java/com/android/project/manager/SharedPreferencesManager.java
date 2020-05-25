@@ -31,6 +31,16 @@ public class SharedPreferencesManager {
         return null;
     }
 
+    public static int getUserId() {
+        final String userJson = SpUtils.getInstance().getString(KEY_USER, "");
+        if (!TextUtils.isEmpty(userJson)){
+            User userBean = GsonUtils.get().fromJson(userJson, User.class);
+            return userBean.getId();
+        }
+        return 0;
+    }
+
+
     public static void clearUser() {
         SpUtils.getInstance().removeValue(KEY_USER);
     }

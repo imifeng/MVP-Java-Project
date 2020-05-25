@@ -20,19 +20,6 @@ public class User {
         }
     }
 
-    public static User getCurrentUser() {
-        return SharedPreferencesManager.getUser();
-    }
-
-    public static int getUserId(){
-        User user = getCurrentUser();
-        if(user != null){
-            return user.getId();
-        }else{
-            return 0;
-        }
-    }
-
     public int getId() {
         return id;
     }
@@ -47,11 +34,6 @@ public class User {
 
     public String getToken() {
         return token;
-    }
-
-    @Override
-    public String toString() {
-        return "id -> " + id + " login -> " + login;
     }
 
 }
