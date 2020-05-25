@@ -25,7 +25,7 @@ public class SharedPreferencesManager {
     public static User getUser() {
         final String userJson = SpUtils.getInstance().getString(KEY_USER, "");
         if (!TextUtils.isEmpty(userJson)){
-            User userBean = (User) GsonUtils.get().fromJson(userJson, User.class);
+            User userBean = GsonUtils.get().fromJson(userJson, User.class);
             return userBean;
         }
         return null;

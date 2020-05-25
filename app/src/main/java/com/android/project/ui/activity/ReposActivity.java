@@ -10,7 +10,6 @@ import com.android.project.base.BaseMvpActivity;
 import com.android.project.mvp.contract.ReposContract;
 import com.android.project.mvp.model.bean.RepoBean;
 import com.android.project.mvp.presenter.ReposPresenter;
-import com.android.project.net.gson.GsonSerializer;
 import com.android.project.utils.DisplayCutoutUtils;
 import com.android.project.utils.GsonUtils;
 import com.android.project.utils.ToastUtils;
