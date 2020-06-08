@@ -1,8 +1,9 @@
-package com.android.project.net;
+package com.android.project.http;
 
 import android.text.TextUtils;
 
 import com.android.project.BuildConfig;
+import com.android.project.manager.SharedPreferencesManager;
 import com.android.project.mvp.model.bean.User;
 import com.android.project.utils.LogUtils;
 
@@ -83,7 +84,7 @@ public class RetrofitClient {
         return chain -> {
             Request.Builder requestBuilder = chain.request().newBuilder();
             requestBuilder.addHeader("Content-Type", "application/json; charset=utf-8");
-            //Add Token
+            //这里把token添加到请求头，进行api验证；根据api验证token方式来决定是否需要
             final String authenticate = authenticate();
             if (!TextUtils.isEmpty(authenticate)) {
                 requestBuilder.addHeader("Authorization", "Bearer " + authenticate);
@@ -98,7 +99,7 @@ public class RetrofitClient {
     }
 
     private String authenticate() {
-        User currentUser = User.getCurrentUser();
+        User currentUser = SharedPreferencesManager.getUser();
         if (currentUser != null) {
             return currentUser.getToken();
         }

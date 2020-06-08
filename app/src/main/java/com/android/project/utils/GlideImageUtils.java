@@ -108,7 +108,7 @@ public class GlideImageUtils {
         }
     }
 
-    private void loadGif(Context context, ImageView gifView, int gifDrawable, int loopCount) {
+    public void loadGif(Context context, ImageView gifView, int gifDrawable, int loopCount) {
         Glide.with(context).asGif().load(gifDrawable).listener(new RequestListener<GifDrawable>() {
             @Override
             public boolean onLoadFailed(@Nullable GlideException e, Object model, Target<GifDrawable> target, boolean isFirstResource) {
@@ -123,7 +123,7 @@ public class GlideImageUtils {
         }).into(gifView).clearOnDetach();
     }
 
-    private void clearMemory(Context context) {
+    public void clearMemory(Context context) {
         Glide.get(context).clearMemory();
     }
 }

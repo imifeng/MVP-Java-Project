@@ -1,4 +1,4 @@
-package com.android.project.net;
+package com.android.project.http;
 
 import io.reactivex.rxjava3.annotations.NonNull;
 import io.reactivex.rxjava3.core.Observer;

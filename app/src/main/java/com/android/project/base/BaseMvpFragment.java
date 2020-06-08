@@ -4,7 +4,7 @@ import android.os.Bundle;
 
 import androidx.annotation.Nullable;
 
-import com.android.project.net.RxLifecycleUtils;
+import com.android.project.http.RxLifecycleUtils;
 import com.android.project.utils.ToastUtils;
 import com.android.project.manager.ProgressDialogManager;
 

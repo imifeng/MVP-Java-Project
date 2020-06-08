@@ -5,6 +5,8 @@ import android.app.Application;
 import android.content.Context;
 import android.os.Build;
 
+import com.android.project.utils.GlideImageUtils;
+
 /**
  * @author Finn
  * @date 2020
@@ -43,4 +45,11 @@ public class MApplication extends Application {
         }
         return false;
     }
+
+    @Override
+    public void onLowMemory() {
+        super.onLowMemory();
+        GlideImageUtils.getInstance().clearMemory(this);
+    }
+
 }
