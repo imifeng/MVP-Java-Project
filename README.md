@@ -15,6 +15,6 @@ mvp+retrofit2+rxjava3+autodispose
 
 * [Glide](https://bumptech.github.io/glide/) for image loading
 
-* [StatusBarUtil](https://github.com/laobie/StatusBarUtil)
+* [StatusBarUtil](https://github.com/laobie/StatusBarUtil) for setting status bar style on Android App
 
-* [Butterknife](https://jakewharton.github.io/butterknife/)
+* [Butterknife](https://jakewharton.github.io/butterknife/) Bind Android views and callbacks to fields and methods

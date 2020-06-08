@@ -10,7 +10,7 @@ import android.widget.RelativeLayout;
 /**
  * @author Finn
  * @date 2020
- * 适配刘海屏幕高度
+ * 适配屏幕状态栏高度
  */
 public class DisplayCutoutUtils {
 
