@@ -1,6 +1,6 @@
 package com.android.project.base;
 
-import com.android.project.net.RetrofitClient;
+import com.android.project.http.RetrofitClient;
 
 /**
  * @author Finn

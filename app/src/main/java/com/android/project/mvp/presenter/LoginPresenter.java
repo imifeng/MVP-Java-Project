@@ -5,7 +5,7 @@ import com.android.project.mvp.model.bean.BaseResponse;
 import com.android.project.mvp.model.bean.User;
 import com.android.project.mvp.contract.LoginContract;
 import com.android.project.mvp.model.LoginModel;
-import com.android.project.net.NetRequestListener;
+import com.android.project.http.NetRequestListener;
 
 /**
  * @author Finn

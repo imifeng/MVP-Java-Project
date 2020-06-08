@@ -8,8 +8,8 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.android.project.R;
+import com.android.project.base.BaseFragment;
 import com.android.project.base.BaseMvpActivity;
-import com.android.project.base.BaseMvpFragment;
 import com.android.project.base.BasePresenter;
 import com.android.project.common.Constant;
 import com.android.project.ui.fragment.TestReposFragment;
@@ -59,7 +59,7 @@ public class TestFragmentActivity extends BaseMvpActivity {
         finish();
     }
 
-    private void openFragment(BaseMvpFragment fragment) {
+    private void openFragment(BaseFragment fragment) {
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction transaction = fragmentManager.beginTransaction();
         transaction.replace(R.id.test_fragment, fragment).

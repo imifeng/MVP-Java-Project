@@ -4,7 +4,7 @@ import com.android.project.base.BasePresenter;
 import com.android.project.mvp.model.bean.RepoBean;
 import com.android.project.mvp.contract.ReposContract;
 import com.android.project.mvp.model.ReposModel;
-import com.android.project.net.NetRequestListener;
+import com.android.project.http.NetRequestListener;
 
 import java.util.List;
 

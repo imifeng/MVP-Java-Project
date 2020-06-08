@@ -1,8 +1,8 @@
 package com.android.project.base;
 
 
-import com.android.project.net.NetObserver;
-import com.android.project.net.NetRequestListener;
+import com.android.project.http.NetObserver;
+import com.android.project.http.NetRequestListener;
 
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 import io.reactivex.rxjava3.core.Observable;
