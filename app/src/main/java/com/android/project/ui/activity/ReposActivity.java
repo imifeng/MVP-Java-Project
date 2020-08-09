@@ -1,12 +1,17 @@
 package com.android.project.ui.activity;
 
+import android.os.Build;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import androidx.annotation.RequiresApi;
+
 import com.android.project.R;
 import com.android.project.base.BaseMvpActivity;
+import com.android.project.http.network.NetworkConnectedListener;
+import com.android.project.http.network.NetworkManger;
 import com.android.project.mvp.contract.ReposContract;
 import com.android.project.mvp.model.bean.RepoBean;
 import com.android.project.mvp.presenter.ReposPresenter;
@@ -18,7 +23,8 @@ import java.util.List;
 
 import butterknife.BindView;
 
-public class ReposActivity extends BaseMvpActivity<ReposContract.View, ReposPresenter> implements ReposContract.View {
+@RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+public class ReposActivity extends BaseMvpActivity<ReposContract.View, ReposPresenter> implements ReposContract.View, NetworkConnectedListener {
 
     @BindView(R.id.status_bar)
     LinearLayout statusBar;
@@ -44,6 +50,9 @@ public class ReposActivity extends BaseMvpActivity<ReposContract.View, ReposPres
     protected void initView() {
         super.initView();
         DisplayCutoutUtils.adaptStatusBarHeight(this, statusBar);
+
+        //注册网络监听
+        NetworkManger.getInstance().registerNetworkCallback(this);
     }
 
 
@@ -81,4 +90,24 @@ public class ReposActivity extends BaseMvpActivity<ReposContract.View, ReposPres
 
     }
 
+    /**
+     * 网络监听回调
+     */
+    @Override
+    public void networkConnected(Boolean isConnected) {
+        if (isConnected) {
+            //有网络
+            ToastUtils.showToast("网络连接上了");
+        } else {
+            //无网络
+            ToastUtils.showToast("失去网络了");
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        //注销网络监听
+        NetworkManger.getInstance().unregisterNetworkCallback();
+    }
 }
