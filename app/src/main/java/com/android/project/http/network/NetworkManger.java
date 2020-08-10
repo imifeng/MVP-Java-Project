@@ -42,12 +42,18 @@ public class NetworkManger {
         /**
          * 网络监听回调(默认)
          */
-        networkCallbackImpl.addNetworkConnectedListener(isConnected -> connectedListener.networkConnected(isConnected));
+        networkCallbackImpl.addNetworkConnectedListener(isConnected -> {
+            if (connectedListener != null)
+                connectedListener.networkConnected(isConnected);
+        });
 
         /**
          * 添加网络类型监听回调
          */
-        networkCallbackImpl.addNetworkCapabilitiesListener(type -> capabilitiesListener.networkCapabilitiesChanged(type));
+        networkCallbackImpl.addNetworkCapabilitiesListener(type -> {
+            if (capabilitiesListener != null)
+                capabilitiesListener.networkCapabilitiesChanged(type);
+        });
     }
 
     public void unregisterNetworkCallback() {

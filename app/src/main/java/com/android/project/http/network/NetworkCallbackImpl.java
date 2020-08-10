@@ -14,14 +14,16 @@ public class NetworkCallbackImpl extends ConnectivityManager.NetworkCallback {
     public void onAvailable(@NonNull Network network) {
         super.onAvailable(network);
         // 在框架连接并声明可以使用新网络时调用
-        networkConnectedListener.networkConnected(true);
+        if (networkConnectedListener != null)
+            networkConnectedListener.networkConnected(true);
     }
 
     @Override
     public void onLost(@NonNull Network network) {
         super.onLost(network);
         // 当网络断开连接或不再满足此请求或回调时调用
-        networkConnectedListener.networkConnected(false);
+        if (networkConnectedListener != null)
+            networkConnectedListener.networkConnected(false);
     }
 
     @Override
@@ -29,6 +31,7 @@ public class NetworkCallbackImpl extends ConnectivityManager.NetworkCallback {
         super.onCapabilitiesChanged(network, networkCapabilities);
         // 当与此请求相对应的网络更改功能但仍满足请求的条件时调用
         if (networkCapabilities.hasCapability(NetworkCapabilities.NET_CAPABILITY_VALIDATED)) {
+            if (networkCapabilitiesListener == null) return;
             if (networkCapabilities.hasTransport(NetworkCapabilities.TRANSPORT_WIFI)) {
                 // 网络类型 wifi
                 networkCapabilitiesListener.networkCapabilitiesChanged(NetworkType.NETWORK_WIFI);
