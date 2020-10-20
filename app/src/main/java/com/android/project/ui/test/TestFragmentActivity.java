@@ -1,4 +1,4 @@
-package com.android.project.ui.activity;
+package com.android.project.ui.test;
 
 import android.os.Bundle;
 import android.widget.ImageView;
@@ -12,7 +12,7 @@ import com.android.project.base.BaseFragment;
 import com.android.project.base.BaseMvpActivity;
 import com.android.project.base.BasePresenter;
 import com.android.project.common.Constant;
-import com.android.project.ui.fragment.TestReposFragment;
+import com.android.project.ui.test.fragment.TestReposFragment;
 import com.android.project.utils.DisplayCutoutUtils;
 
 import butterknife.BindView;

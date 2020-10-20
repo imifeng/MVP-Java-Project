@@ -7,7 +7,7 @@ import android.os.Build;
 
 import androidx.annotation.RequiresApi;
 
-import com.android.project.MApplication;
+import com.android.project.ui.MApplication;
 
 /**
  * @author Finn

@@ -1,4 +1,4 @@
-package com.android.project.ui.fragment;
+package com.android.project.ui.test.fragment;
 
 import android.os.Bundle;
 import android.view.View;

@@ -1,4 +1,4 @@
-package com.android.project.ui.activity;
+package com.android.project.ui.repos;
 
 import android.os.Build;
 import android.widget.EditText;
@@ -87,7 +87,6 @@ public class ReposActivity extends BaseMvpActivity<ReposContract.View, ReposPres
     @Override
     public void onReposSuccess(List<RepoBean> response) {
         ToastUtils.showToast("getRepos Successful:"  + ":" + GsonUtils.get().toJson(response));
-
     }
 
     /**

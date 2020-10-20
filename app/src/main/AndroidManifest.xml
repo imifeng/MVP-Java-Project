@@ -10,7 +10,7 @@
 
 
     <application
-        android:name=".MApplication"
+        android:name=".ui.MApplication"
         android:allowBackup="true"
         android:hardwareAccelerated="true"
         android:icon="@mipmap/ic_launcher"
@@ -22,7 +22,7 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
 
-        <activity android:name=".ui.activity.MainActivity"
+        <activity android:name=".ui.main.MainActivity"
             android:theme="@style/AppTheme.LaunchTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,9 +30,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.activity.LoginActivity" />
-        <activity android:name=".ui.activity.ReposActivity" />
-        <activity android:name=".ui.activity.TestFragmentActivity" />
+        <activity android:name=".ui.login.LoginActivity" />
+        <activity android:name=".ui.repos.ReposActivity" />
+        <activity android:name=".ui.test.TestFragmentActivity" />
 
 
     </application>
