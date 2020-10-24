@@ -54,11 +54,6 @@ public class TestFragmentActivity extends BaseMvpActivity {
         });
     }
 
-    @Override
-    protected void onBack() {
-        finish();
-    }
-
     private void openFragment(BaseFragment fragment) {
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction transaction = fragmentManager.beginTransaction();

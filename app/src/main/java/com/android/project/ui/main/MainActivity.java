@@ -57,9 +57,4 @@ public class MainActivity extends BaseMvpActivity {
         });
     }
 
-    @Override
-    protected void onBack() {
-        finish();
-    }
-
 }

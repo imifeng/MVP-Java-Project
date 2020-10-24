@@ -67,11 +67,6 @@ public class LoginActivity extends BaseMvpActivity<LoginContract.View, LoginPres
         });
     }
 
-    @Override
-    protected void onBack() {
-        finish();
-    }
-
     /**
      * @return 帐号
      */

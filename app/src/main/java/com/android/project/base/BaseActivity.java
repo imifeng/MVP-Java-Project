@@ -55,7 +55,9 @@ public abstract class BaseActivity extends AppCompatActivity {
         OnClickUtils.setOnClickListener(view, onClickListener);
     }
 
-    protected abstract void onBack();
+    protected Boolean onBack(){
+        return false;
+    }
 
     /**
      * Listen the back key click event
@@ -63,8 +65,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if (keyCode == KeyEvent.KEYCODE_BACK) {
-            onBack();
-            return true;
+            if (onBack()) return true;
         }
         return super.onKeyDown(keyCode, event);
     }

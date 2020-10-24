@@ -7,6 +7,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.RequiresApi;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.project.R;
 import com.android.project.base.BaseMvpActivity;
@@ -15,8 +17,8 @@ import com.android.project.http.network.NetworkManger;
 import com.android.project.mvp.contract.ReposContract;
 import com.android.project.mvp.model.bean.RepoBean;
 import com.android.project.mvp.presenter.ReposPresenter;
+import com.android.project.ui.repos.adapter.ReposAdapter;
 import com.android.project.utils.DisplayCutoutUtils;
-import com.android.project.utils.GsonUtils;
 import com.android.project.utils.ToastUtils;
 
 import java.util.List;
@@ -34,7 +36,11 @@ public class ReposActivity extends BaseMvpActivity<ReposContract.View, ReposPres
     EditText etName;
     @BindView(R.id.tv_repos_btn)
     TextView tvReposBtn;
+    @BindView(R.id.rv_repos)
+    RecyclerView rv_repos;
 
+    private LinearLayoutManager layoutManager;
+    private ReposAdapter reposAdapter;
 
     @Override
     public ReposPresenter createPresenter() {
@@ -53,6 +59,11 @@ public class ReposActivity extends BaseMvpActivity<ReposContract.View, ReposPres
 
         //注册网络监听
         NetworkManger.getInstance().registerNetworkCallback(this);
+
+        layoutManager = new LinearLayoutManager(this);
+        rv_repos.setLayoutManager(layoutManager);
+        reposAdapter = new ReposAdapter(this);
+        rv_repos.setAdapter(reposAdapter);
     }
 
 
@@ -72,11 +83,6 @@ public class ReposActivity extends BaseMvpActivity<ReposContract.View, ReposPres
         });
     }
 
-    @Override
-    protected void onBack() {
-        finish();
-    }
-
     /**
      * @return Username
      */
@@ -86,7 +92,7 @@ public class ReposActivity extends BaseMvpActivity<ReposContract.View, ReposPres
 
     @Override
     public void onReposSuccess(List<RepoBean> response) {
-        ToastUtils.showToast("getRepos Successful:"  + ":" + GsonUtils.get().toJson(response));
+        reposAdapter.setData(response);
     }
 
     /**
