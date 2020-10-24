@@ -1,6 +1,7 @@
 package com.android.project.ui.repos;
 
 import android.os.Build;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -36,6 +37,8 @@ public class ReposActivity extends BaseMvpActivity<ReposContract.View, ReposPres
     EditText etName;
     @BindView(R.id.tv_repos_btn)
     TextView tvReposBtn;
+    @BindView(R.id.tv_no_data)
+    TextView tv_no_data;
     @BindView(R.id.rv_repos)
     RecyclerView rv_repos;
 
@@ -92,7 +95,12 @@ public class ReposActivity extends BaseMvpActivity<ReposContract.View, ReposPres
 
     @Override
     public void onReposSuccess(List<RepoBean> response) {
-        reposAdapter.setData(response);
+        if (response != null && response.size() > 0){
+            reposAdapter.setData(response);
+            tv_no_data.setVisibility(View.GONE);
+        }else {
+            tv_no_data.setVisibility(View.VISIBLE);
+        }
     }
 
     /**

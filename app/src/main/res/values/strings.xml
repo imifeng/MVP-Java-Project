@@ -3,6 +3,7 @@
 
     //
     <string name="test_fragment">Test fragment</string>
+    <string name="no_data">No data</string>
     <string name="get_repos">get repos</string>
     <string name="repos_text_hint_username">Please enter the github username</string>
 
