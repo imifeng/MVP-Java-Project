@@ -68,20 +68,29 @@
             android:background="@drawable/shape_rectangle_btn_main"
             android:gravity="center"
             android:text="@string/get_repos"
-            android:textColor="@color/white"
+            android:textColor="@color/primary_white"
             android:textSize="17sp" />
     </LinearLayout>
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:minHeight="200dp">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_repos"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
-    </LinearLayout>
+        <TextView
+            android:id="@+id/tv_no_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:visibility="gone"
+            style="@style/Text20Purple"
+            android:text="@string/no_data"/>
+
+    </RelativeLayout>
 
 </LinearLayout>

@@ -2,7 +2,7 @@ package com.android.project.utils;
 
 import android.widget.Toast;
 
-import com.android.project.MApplication;
+import com.android.project.ui.MApplication;
 
 /**
  * @author Finn

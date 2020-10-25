@@ -1,4 +1,4 @@
-package com.android.project.ui.activity;
+package com.android.project.ui.login;
 
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -65,11 +65,6 @@ public class LoginActivity extends BaseMvpActivity<LoginContract.View, LoginPres
             }
             getPresenter().login(getUsername(), getPassword());
         });
-    }
-
-    @Override
-    protected void onBack() {
-        finish();
     }
 
     /**

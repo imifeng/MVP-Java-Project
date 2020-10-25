@@ -1,16 +1,16 @@
-package com.android.project.ui.activity;
+package com.android.project.ui.test.fragment;
 
+import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.android.project.R;
-import com.android.project.base.BaseMvpActivity;
-import com.android.project.mvp.contract.ReposContract;
+import com.android.project.base.BaseMvpFragment;
+import com.android.project.common.Constant;
+import com.android.project.mvp.contract.TestContract;
 import com.android.project.mvp.model.bean.RepoBean;
-import com.android.project.mvp.presenter.ReposPresenter;
-import com.android.project.utils.DisplayCutoutUtils;
+import com.android.project.mvp.presenter.TestPresenter;
 import com.android.project.utils.GsonUtils;
 import com.android.project.utils.ToastUtils;
 
@@ -18,42 +18,41 @@ import java.util.List;
 
 import butterknife.BindView;
 
-public class ReposActivity extends BaseMvpActivity<ReposContract.View, ReposPresenter> implements ReposContract.View {
+public class TestReposFragment extends BaseMvpFragment<TestContract.View, TestPresenter> implements TestContract.View {
 
-    @BindView(R.id.status_bar)
-    LinearLayout statusBar;
-    @BindView(R.id.iv_back)
-    ImageView ivBack;
     @BindView(R.id.et_username)
     EditText etName;
     @BindView(R.id.tv_repos_btn)
     TextView tvReposBtn;
 
-
     @Override
-    public ReposPresenter createPresenter() {
-        return new ReposPresenter();
+    public TestPresenter createPresenter() {
+        return new TestPresenter();
     }
 
     @Override
-    public int getLayoutId() {
-        return R.layout.activity_repos;
+    protected int getLayoutId() {
+        return R.layout.fragment_test_repos;
     }
 
     @Override
-    protected void initView() {
-        super.initView();
-        DisplayCutoutUtils.adaptStatusBarHeight(this, statusBar);
+    protected void initView(View view) {
+        super.initView(view);
+        Bundle bundle = getArguments();
+        if (bundle != null) {
+            String testStr = bundle.getString(Constant.EXTRA_ACTION_TEST);
+            ToastUtils.showToast(testStr);
+        }
     }
 
+    @Override
+    protected void initData() {
+        super.initData();
+    }
 
     @Override
     protected void initEvent() {
         super.initEvent();
-        setOnClickListener(ivBack, view -> {
-            finish();
-        });
-
         setOnClickListener(tvReposBtn, view -> {
             if (getUsername().isEmpty()) {
                 ToastUtils.showToast(getString(R.string.repos_text_hint_username));
@@ -61,11 +60,6 @@ public class ReposActivity extends BaseMvpActivity<ReposContract.View, ReposPres
             }
             getPresenter().getRepos(getUsername());
         });
-    }
-
-    @Override
-    protected void onBack() {
-        finish();
     }
 
     /**
@@ -80,5 +74,4 @@ public class ReposActivity extends BaseMvpActivity<ReposContract.View, ReposPres
         ToastUtils.showToast("getRepos Successful:"  + ":" + GsonUtils.get().toJson(response));
 
     }
-
 }

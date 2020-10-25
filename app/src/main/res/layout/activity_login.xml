@@ -105,7 +105,7 @@
             android:background="@drawable/shape_rectangle_btn_main"
             android:gravity="center"
             android:text="@string/sign_in"
-            android:textColor="@color/white"
+            android:textColor="@color/primary_white"
             android:textSize="17sp" />
     </LinearLayout>
 

@@ -1,4 +1,4 @@
-package com.android.project;
+package com.android.project.ui;
 
 import android.app.Activity;
 import android.app.Application;

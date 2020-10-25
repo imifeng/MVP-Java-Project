@@ -45,7 +45,14 @@ public class RepoBean {
         return description;
     }
 
-    class OwnerBean {
+    public String getAvatar() {
+        if (getOwner() != null) {
+            return getOwner().getAvatar_url();
+        }
+        return "";
+    }
+
+    public static class OwnerBean {
         private int id;
 
         private String name;

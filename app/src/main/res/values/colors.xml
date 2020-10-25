@@ -4,10 +4,42 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
 
+    <color name="cyan_dark">#008cbe</color>
+    <color name="primary_cyan">#00aeed</color>
+    <color name="cyan_secondary">#41c6f6</color>
+    <color name="cyan_light">#94e2ff</color>
+    <color name="blue_dark">#0225c5</color>
+    <color name="primary_blue">#3854d4</color>
+    <color name="blue_secondary">#677cdb</color>
+    <color name="blue_light">#9ca9e5</color>
+    <color name="yellow_dark">#efb118</color>
+    <color name="primary_yellow">#ffc945</color>
+    <color name="yellow_secondary">#ffd671</color>
+    <color name="yellow_light">#ffe6aa</color>
+    <color name="green_dark">#22b66f</color>
+    <color name="primary_green">#38cc85</color>
+    <color name="green_secondary">#5cdd9f</color>
+    <color name="green_light">#8df0c0</color>
+    <color name="coral_dark">#d85865</color>
+    <color name="primary_coral">#fc6978</color>
+    <color name="coral_secondary">#fd8f9a</color>
+    <color name="coral_light">#ffb8c0</color>
+    <color name="magenta_dark">#a50c76</color>
+    <color name="primary_magenta">#c92c99</color>
+    <color name="magenta_secondary">#d862b4</color>
+    <color name="magenta_light">#eba7d6</color>
+    <color name="purple_dark">#3a006b</color>
+    <color name="primary_purple">#4a008a</color>
+    <color name="purple_secondary">#6c20ad</color>
+    <color name="purple_light">#b17fdc</color>
+    <color name="error_red">#d9345b</color>
+    <color name="primary_black">#100211</color>
+    <color name="primary_dark_gray">#968c96</color>
+    <color name="primary_light_gray">#fbfafa</color>
+    <color name="primary_white">#ffffff</color>
+
     <color name="translucent">#80000000</color>
     <color name="transparent">#00000000</color>
-
-    <color name="white">#ffffff</color>
 
     <color name="color_main">#FE9B00</color>
 

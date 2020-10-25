@@ -8,7 +8,7 @@ import android.widget.ImageView;
 import androidx.annotation.Nullable;
 import androidx.swiperefreshlayout.widget.CircularProgressDrawable;
 
-import com.android.project.MApplication;
+import com.android.project.ui.MApplication;
 import com.android.project.R;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.DataSource;

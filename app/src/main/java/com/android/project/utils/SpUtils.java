@@ -5,7 +5,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 
 import com.android.project.BuildConfig;
-import com.android.project.MApplication;
+import com.android.project.ui.MApplication;
 
 /**
  * @author Finn
